@@ -3,9 +3,9 @@ package com.hennrix.physics.geometry;
 import com.hennrix.physics.Coordinates;
 
 public class Point {
-    private final Long positionX;
-    private final Long positionY;
-    private final Long positionZ;
+    private final double positionX;
+    private final double positionY;
+    private final double positionZ;
 
 
     /**
@@ -20,21 +20,21 @@ public class Point {
     /**
      * Creates a Point with the Coordinates and basically a PositionZ with '0' as Value
      */
-    public Point(Long positionX, Long positionY){
+    public Point(double positionX, double positionY){
         this.positionX = positionX;
         this.positionY = positionY;
         positionZ = 0L;
     }
 
-    public Long getPositionX() {
+    public double getPositionX() {
         return positionX;
     }
 
-    public Long getPositionY() {
+    public double getPositionY() {
         return positionY;
     }
 
-    public Long getPositionZ() {
+    public double getPositionZ() {
         return positionZ;
     }
 }

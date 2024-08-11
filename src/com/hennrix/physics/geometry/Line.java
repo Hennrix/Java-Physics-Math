@@ -1,4 +1,7 @@
 package com.hennrix.physics.geometry;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 
 public class Line {
     Point pointP;
@@ -8,12 +11,13 @@ public class Line {
         this.pointQ = pointQ;
     }
     public double getLength(){
-        long x = pointP.getPositionX()- pointQ.getPositionX();
-        long y = pointP.getPositionY()- pointQ.getPositionY();
-        long z = pointP.getPositionZ()- pointQ.getPositionZ();
-
-        return Math.sqrt(Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2));
-
+        double x = pointP.getPositionX()- pointQ.getPositionX();
+        double y = pointP.getPositionY()- pointQ.getPositionY();
+        double z = pointP.getPositionZ()- pointQ.getPositionZ();
+        double number = Math.sqrt(Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2));
+        BigDecimal bd = new BigDecimal(number);
+        bd = bd.setScale(5, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 
 
