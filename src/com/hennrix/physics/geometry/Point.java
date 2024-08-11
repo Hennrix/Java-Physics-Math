@@ -3,9 +3,9 @@ package com.hennrix.physics.geometry;
 import com.hennrix.physics.Coordinates;
 
 public class Point {
-    private double positionX;
-    private double positionY;
-    private double positionZ;
+    private final Long positionX;
+    private final Long positionY;
+    private final Long positionZ;
 
 
     /**
@@ -23,6 +23,18 @@ public class Point {
     public Point(Long positionX, Long positionY){
         this.positionX = positionX;
         this.positionY = positionY;
-        positionZ = 0;
+        positionZ = 0L;
+    }
+
+    public Long getPositionX() {
+        return positionX;
+    }
+
+    public Long getPositionY() {
+        return positionY;
+    }
+
+    public Long getPositionZ() {
+        return positionZ;
     }
 }

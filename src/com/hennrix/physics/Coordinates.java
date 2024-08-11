@@ -5,24 +5,27 @@ package com.hennrix.physics;
  * Coordinates stored in an Array
  */
 public class Coordinates {
-    private final double positionX;
-    private final double positionY;
-    private final double positionZ;
+    private final Long positionX;
+    private final Long positionY;
+    private final Long positionZ;
 
 
-    public Coordinates(double x, double y, double z){
+    public Coordinates(Long x, Long y, Long z) {
         positionX = x;
         positionY = y;
         positionZ = z;
 
     }
 
-    public double getPositionX() {
+    public Long getPositionX() {
         return positionX;
-    }    public double getPositionY() {
-        return positionY;
-    }    public double getPositionZ() {
-        return positionZ;
     }
 
+    public Long getPositionY() {
+        return positionY;
+    }
+
+    public Long getPositionZ() {
+        return positionZ;
+    }
 }
