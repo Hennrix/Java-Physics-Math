@@ -1,8 +1,8 @@
-package com.hennrix.physics.geometry;
+package com.hennrix.math.interfaces;
 
 import com.hennrix.physics.Coordinates;
 
-public class Point {
+public abstract class Point {
     private final double positionX;
     private final double positionY;
     private final double positionZ;
