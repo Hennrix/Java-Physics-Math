@@ -1,6 +1,6 @@
-package com.hennrix.math.interfaces.geometry;
+package com.hennrix.math.model.geometry;
 
-import com.hennrix.math.interfaces.Vector;
+import com.hennrix.math.model.Vector;
 
 /**
  * knows as a⃗  or b⃗ , holding 2 or three values, for direction, magnitude and in 3rd dimension even angle

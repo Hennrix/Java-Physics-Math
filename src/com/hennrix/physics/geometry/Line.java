@@ -1,6 +1,6 @@
 package com.hennrix.physics.geometry;
-import com.hennrix.math.interfaces.Point;
-import com.hennrix.math.interfaces.geometry.GeometryVector;
+import com.hennrix.math.model.Point;
+import com.hennrix.math.model.geometry.GeometryVector;
 
 
 

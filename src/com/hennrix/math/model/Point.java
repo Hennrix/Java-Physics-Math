@@ -1,4 +1,4 @@
-package com.hennrix.math.interfaces;
+package com.hennrix.math.model;
 
 import com.hennrix.physics.Coordinates;
 

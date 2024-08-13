@@ -1,4 +1,4 @@
-package com.hennrix.math.interfaces;
+package com.hennrix.math.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

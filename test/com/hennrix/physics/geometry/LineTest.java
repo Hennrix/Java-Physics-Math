@@ -1,7 +1,7 @@
 package com.hennrix.physics.geometry;
 
-import com.hennrix.math.interfaces.Point;
-import com.hennrix.math.interfaces.geometry.GeometryVector;
+import com.hennrix.math.model.Point;
+import com.hennrix.math.model.geometry.GeometryVector;
 import com.hennrix.physics.Coordinates;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
