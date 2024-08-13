@@ -4,10 +4,9 @@ import com.hennrix.math.model.Point;
 import com.hennrix.math.model.geometry.GeometryVector;
 import com.hennrix.physics.Coordinates;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-@Nested
+
 class LineTest {
     //Points get created
     double sqrtOfThree = Math.sqrt(3);
