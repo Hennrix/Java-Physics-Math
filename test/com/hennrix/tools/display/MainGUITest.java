@@ -77,4 +77,23 @@ public class MainGUITest {
         JPanel drawPanel = window.panel("drawPanel").target();
         assertThat(drawPanel.isVisible()).isTrue(); // Ensure no errors during rendering
     }
+
+    @Test
+    public void testGetVectorButton_ShouldDisplayCorrectVector() {
+        // Enter valid coordinates
+        window.textBox("x1Coordinate").setText("3");
+        window.textBox("y1Coordinate").setText("4");
+        window.textBox("z1Coordinate").setText("5");
+        window.textBox("x2Coordinate").setText("6");
+        window.textBox("y2Coordinate").setText("2");
+        window.textBox("z2Coordinate").setText("9");
+
+        // Click the "Get Vector" button
+        window.button("buttonGetVector").click();
+
+        // Verify that the vector is displayed correctly
+        JOptionPaneFixture optionPane = window.optionPane();
+        optionPane.requireInformationMessage()
+                .requireMessage("Vector:\n⎛ 3.00 ⎞\n⎜ -2.00 ⎟\n⎝ 4.00 ⎠");
+    }
 }

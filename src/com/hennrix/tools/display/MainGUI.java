@@ -1,5 +1,6 @@
 package com.hennrix.tools.display;
 
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -53,6 +54,10 @@ public class MainGUI {
         buttonDraw.setName("buttonDraw");
         panelCoordinate.add(buttonDraw);
 
+        JButton buttonGetVector = new JButton("Get Vector");
+        buttonGetVector.setName("buttonGetVector");
+        panelCoordinate.add(buttonGetVector);
+
         DrawPanel drawPanel = new DrawPanel(x1Coordinate, y1Coordinate, z1Coordinate, x2Coordinate, y2Coordinate, z2Coordinate, customTextField);
         drawPanel.setName("drawPanel");
         drawPanel.setPreferredSize(new Dimension(800, 400));
@@ -61,7 +66,32 @@ public class MainGUI {
         frame.add(panelCoordinate, BorderLayout.NORTH);
         frame.add(drawPanel, BorderLayout.CENTER);
 
+
         buttonDraw.addActionListener(_ -> drawPanel.repaint());
+
+        buttonGetVector.addActionListener(_ -> {
+            try {
+                double x1 = Double.parseDouble(x1Coordinate.getText());
+                double y1 = Double.parseDouble(y1Coordinate.getText());
+                double z1 = Double.parseDouble(z1Coordinate.getText());
+                double x2 = Double.parseDouble(x2Coordinate.getText());
+                double y2 = Double.parseDouble(y2Coordinate.getText());
+                double z2 = Double.parseDouble(z2Coordinate.getText());
+
+                // Calculate the vector components
+                double vectorX = x2 - x1;
+                double vectorY = y2 - y1;
+                double vectorZ = z2 - z1;
+
+
+                // Format the vector for display
+                String vectorString = String.format("Vector:\n⎛ %.2f ⎞\n⎜ %.2f ⎟\n⎝ %.2f ⎠", vectorX, vectorY, vectorZ);
+                JOptionPane.showMessageDialog(frame, vectorString, "Vector", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(frame, "Please enter valid numbers.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
 
         frame.setVisible(true);
     }
@@ -75,8 +105,9 @@ public class MainGUI {
         private final JTextField y1Field;
         private final JTextField x2Field;
         private final JTextField y2Field;
+
         private final JTextField customTextField;
-        //we need this unused coordinates for the Dimension.THIRD
+
         public DrawPanel(JTextField x1Field, JTextField y1Field, JTextField ignoredZ1Field, JTextField x2Field, JTextField y2Field, JTextField ignoredZ2Field, JTextField customTextField) {
             this.x1Field = x1Field;
             this.y1Field = y1Field;
@@ -105,6 +136,10 @@ public class MainGUI {
                 int x2 = Integer.parseInt(x2Field.getText());
                 int y2 = Integer.parseInt(y2Field.getText());
 
+                if (x1 < 0 || x1 > 100 || y1 < 0 || y1 > 100 || x2 < 0 || x2 > 100 || y2 < 0 || y2 > 100) {
+                    JOptionPane.showMessageDialog(this, "Please enter valid numbers.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
                 x1 = scaleCoordinate(x1, panelWidth);
                 y1 = scaleCoordinate(y1, panelHeight);
                 x2 = scaleCoordinate(x2, panelWidth);
@@ -119,9 +154,10 @@ public class MainGUI {
                 g.drawString(customTextField.getText(), 10, 20);
 
             } catch (NumberFormatException ex) {
-                // Instead of showing a dialog, just skip drawing
+                JOptionPane.showMessageDialog(this, "Please enter valid numbers.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+
 
         private int scaleCoordinate(int value, int maxDst) {
             return value * maxDst / 100;
