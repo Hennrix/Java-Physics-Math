@@ -1,7 +1,8 @@
 package com.hennrix.physics.geometry;
 
-import com.hennrix.math.model.Point;
+import com.hennrix.math.model.geometry.Point;
 import com.hennrix.math.model.geometry.GeometryVector;
+import com.hennrix.math.model.geometry.Line;
 import com.hennrix.physics.Coordinates;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -47,7 +48,7 @@ class LineTest {
     void getVector() {
         int i = 0;
         for (Line line : testLines) {
-            Assertions.assertTrue(line.getVector().equals(solutionsVector[i]));
+            Assertions.assertEquals(line.getVector(), solutionsVector[i]);
             i++;
         }
     }

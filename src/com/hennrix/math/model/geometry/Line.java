@@ -1,7 +1,5 @@
-package com.hennrix.physics.geometry;
-import com.hennrix.math.model.Point;
-import com.hennrix.math.model.geometry.GeometryVector;
-
+package com.hennrix.math.model.geometry;
+import com.hennrix.math.model.Vector;
 
 
 public class Line {
@@ -12,12 +10,19 @@ public class Line {
         this.pointQ = pointQ;
     }
 
-    public GeometryVector getVector(){
+    public Vector getVector(){
         double x = pointQ.getPositionX()-pointP.getPositionX();
         double y = pointQ.getPositionY()-pointP.getPositionY();
         double z = pointQ.getPositionZ()-pointP.getPositionZ();
-        return new GeometryVector(x,y,z);
+        return new Vector(x,y,z);
     }
 
+    public Point getPointP() {
+        return pointP;
+    }
+
+    public Point getPointQ() {
+        return pointQ;
+    }
 
 }
