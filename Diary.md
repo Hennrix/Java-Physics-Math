@@ -7,4 +7,5 @@ If I really feel gifted I might even make it visible/gui-based.
 It's not even 3d, I am truly proud.  
 **13.08.2024** Okay I give in to the Void calling me to give the Length calculation to vectors
 **14.08.2024** Changed the GUI so it Warns about wrong numbers, not failing a test.  
-Also you now can get the Vector... Planning to split the GUI in Reusable Objects
+Also you now can get the Vector... Planning to split the GUI in Reusable Objects  
+**26.08.2024** It felt like GUI Time, I am not sure if the result is good  
