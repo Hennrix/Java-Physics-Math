@@ -1,4 +1,4 @@
-package com.hennrix.physics.geometry;
+package com.hennrix.math.model.geometry;
 
 import com.hennrix.physics.Coordinates;
 
@@ -25,6 +25,13 @@ public class Point {
         this.positionY = positionY;
         positionZ = 0L;
     }
+
+    public Point(double positionX, double positionY, double positionZ) {
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.positionZ = positionZ;
+    }
+
 
     public double getPositionX() {
         return positionX;
